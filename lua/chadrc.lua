@@ -3,14 +3,13 @@
 
 ---@type ChadrcConfig
 local M = {}
-
 M.ui = {
-	theme = "onedark",
-
+	theme = "ashes",
+  transparency = true
 	-- hl_override = {
 	-- 	Comment = { italic = true },
 	-- 	["@comment"] = { italic = true },
 	-- },
 }
-
+-- M.plugins = "custom.plugins"
 return M
