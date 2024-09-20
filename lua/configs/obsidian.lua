@@ -9,7 +9,7 @@ require("obsidian").setup({
   daily_notes = {
     folder = "Daily Notes",
     date_format = "%Y-%m-%d",
-    template = "Personal/Templates/Daily Note Template.md",
+    template = "~/Personal/obsidian-notes/Personal/Templates/Daily Note Template.md",
   },
   templates = {
     folder = "Personal/Templates",
