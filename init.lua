@@ -56,6 +56,12 @@ require("lazy").setup({
     "NStefan002/screenkey.nvim",
     lazy = false,
     version = "*", -- or branch = "dev", to use the latest commit
+  },
+  {
+    "rebelot/kanagawa.nvim",
+  },
+  {
+    "lukas-reineke/indent-blankline.nvim"
   }
 }, lazy_config)
 
