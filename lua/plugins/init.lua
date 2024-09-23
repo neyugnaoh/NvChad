@@ -51,7 +51,7 @@ return {
   	opts = {
   		ensure_installed = {
   			"vim", "lua", "vimdoc",
-       "html", "css", "markdown", "markdown_inline", "bash", "javascript", "python"
+       "html", "css", "markdown", "markdown_inline", "bash", "javascript", "python", "cpp"
   		},
       highlight = {
         enable = true,

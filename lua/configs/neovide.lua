@@ -1,6 +1,6 @@
 
 
--- if vim.g.neovide then -- Only config when using neovide
+if vim.g.neovide then -- Only config when using neovide
 
   -- Neovide configuration
   vim.g.neovide_transparency = 0.8
@@ -18,9 +18,9 @@
   vim.g.neovide_cursor_trail_length = 0.8  -- Cursor trail length
   -- vim.g.neovide_fullscreen = true  -- Start Neovide in fullscreen mode
   vim.g.neovide_remember_window_size = true  -- Remember window size between sessions
-  vim.o.guifont = "JetBrainsMono Nerd Font Mono:h10"
+  vim.o.guifont = "JetBrainsMono Nerd Font Mono:h14"
 
   vim.g.neovide_floating_blur_amount_x = 2.0
   vim.g.neovide_floating_blur_amount_y = 2.0
 
--- end
+end
