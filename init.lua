@@ -61,6 +61,24 @@ require("lazy").setup({
     "rebelot/kanagawa.nvim",
   },
   {
+    "morhetz/gruvbox"
+  },
+  {
+    'sainnhe/everforest'
+  },
+  {
+    "voldikss/vim-floaterm",
+    config = function()
+      -- Optional configurations
+      vim.g.floaterm_width = 0.9
+      vim.g.floaterm_height = 0.9
+      vim.g.floaterm_keymap_toggle = "<F12>"  -- Set the toggle keymap
+    end
+  },
+  {
+    "sainnhe/everforest"
+  },
+  {
     "lukas-reineke/indent-blankline.nvim"
   },
   {
@@ -77,7 +95,16 @@ require("lazy").setup({
         "nvim-tree/nvim-web-devicons",
     },
     opts = {},
-}
+  },
+  {
+    "David-Kunz/gen.nvim",
+  },
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+    end,
+  }
 }, lazy_config)
 
 -- Load theme and statusline
@@ -96,12 +123,13 @@ require('configs.obsidian');
 require('configs.neovide');
 require('configs.gitsigns');
 require('configs.leetcode');
-
-
-vim.opt.conceallevel = 1
+require('configs.notify');
+require('configs.gen');
+require('configs.lualine');
 
 -- Enable relative number lines
 vim.wo.relativenumber = true
+vim.opt.conceallevel = 1
 
 -- Load additional mappings
 vim.schedule(function()

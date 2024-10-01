@@ -26,3 +26,11 @@ vim.api.nvim_set_keymap('n', '<D-v>', '"+p', { noremap = true, silent = true })
 
 -- Use Cmd + V to paste in insert mode
 vim.api.nvim_set_keymap('i', '<D-v>', '<C-r>+', { noremap = true, silent = true })
+
+-- Shortcut mapping when using terminal emulator
+
+vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<A-h>', '<C-\\><C-n>h', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<A-j>', '<C-\\><C-n>j', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<A-k>', '<C-\\><C-n>k', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<A-l>', '<C-\\><C-n>l', { noremap = true, silent = true })
