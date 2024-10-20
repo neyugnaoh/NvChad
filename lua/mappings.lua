@@ -12,10 +12,15 @@ map("i", "jk", "<ESC>")
 map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 --
 -- Keybinding configurations
-vim.api.nvim_set_keymap('n', '<Up>', '<NOP>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Down>', '<NOP>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Left>', '<NOP>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Right>', '<NOP>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<Up>', '<NOP>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<Down>', '<NOP>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<Left>', '<NOP>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<Right>', '<NOP>', { noremap = true, silent = true })
+-- Map arrow keys to hjkl
+vim.api.nvim_set_keymap('n', '<Up>', 'k', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Down>', 'j', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Left>', 'h', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Right>', 'l', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('i', '<Up>', '<NOP>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<Down>', '<NOP>', { noremap = true, silent = true })
@@ -34,3 +39,6 @@ vim.api.nvim_set_keymap('t', '<A-h>', '<C-\\><C-n>h', { noremap = true, silent =
 vim.api.nvim_set_keymap('t', '<A-j>', '<C-\\><C-n>j', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('t', '<A-k>', '<C-\\><C-n>k', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('t', '<A-l>', '<C-\\><C-n>l', { noremap = true, silent = true })
+
+
+

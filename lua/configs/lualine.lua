@@ -1,7 +1,7 @@
 -- Customize statusline
 require("lualine").setup({
   options = {
-    theme = "gruvbox",  -- You can choose any theme you like
+    theme = "everforest",  -- You can choose any theme you like
     section_separators = '',
     component_separators = '',
   },
