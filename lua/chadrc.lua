@@ -4,7 +4,7 @@
 ---@type ChadrcConfig
 local M = {}
 M.ui = {
-	theme = "kanagawa",
+	-- theme = "chocolate",
 	transparency = true
 	-- hl_override = {
 	-- 	Comment = { italic = true },
@@ -14,9 +14,9 @@ M.ui = {
 -- M.plugins = "custom.plugins"
 
 M.base46 = {
-	theme = "kanagawa",
-  -- theme = ""
-	-- transparency = true
+	theme = "chocolate",
+	transparency = true
+
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },

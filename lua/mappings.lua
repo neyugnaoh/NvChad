@@ -40,5 +40,11 @@ vim.api.nvim_set_keymap('t', '<A-j>', '<C-\\><C-n>j', { noremap = true, silent =
 vim.api.nvim_set_keymap('t', '<A-k>', '<C-\\><C-n>k', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('t', '<A-l>', '<C-\\><C-n>l', { noremap = true, silent = true })
 
-
+-- Set up Option + Enter to accept Copilot suggestion
+-- vim.api.nvim_set_keymap("i", "<A-Enter>", "copilot#Accept('<CR>')", { silent = true, expr = true, noremap = true })
+-- Resize splits with arrow keys
+vim.api.nvim_set_keymap('n', '<C-Up>', ':resize +2<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-Down>', ':resize -2<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-Left>', ':vertical resize -2<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-Right>', ':vertical resize +2<CR>', { noremap = true, silent = true })
 

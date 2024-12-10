@@ -1,7 +1,8 @@
 -- Customize statusline
+-- See more information: https://github.com/nvim-lualine/lualine.nvim
 require("lualine").setup({
   options = {
-    theme = "everforest",  -- You can choose any theme you like
+    theme = "auto",  -- You can choose any theme you like
     section_separators = '',
     component_separators = '',
   },

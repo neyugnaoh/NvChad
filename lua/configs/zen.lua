@@ -1,3 +1,6 @@
+vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", { desc = "Enter zen mode" })
+
+
 require("zen-mode").setup({
   window = {
     backdrop = 0.95, -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal

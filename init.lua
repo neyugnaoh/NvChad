@@ -57,13 +57,7 @@ require("lazy").setup({
     version = "*",
   },
   {
-    "rebelot/kanagawa.nvim",
-  },
-  {
-    "morhetz/gruvbox"
-  },
-  {
-    'sainnhe/everforest'
+    "ellisonleao/gruvbox.nvim", priority = 1000 , config = true
   },
   {
     "voldikss/vim-floaterm",
@@ -126,7 +120,7 @@ require("lazy").setup({
     },
   },
   {
-    "nvhoang2803/pets.nvim",
+    "peter-nv/pets.nvim",
     dependencies = { "MunifTanjim/nui.nvim", "edluffy/hologram.nvim" },
   },
   {
@@ -144,53 +138,34 @@ require("lazy").setup({
     dependencies = {
       "nvim-lua/plenary.nvim"
     }
+  },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- add any options here
+    },
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
+    }
+  },
+  {
+    "rest-nvim/rest.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
+  { 'mistweaverco/kulala.nvim', opts = {} },
+  { "folke/zen-mode.nvim", opts = {} },
+  {
+    'goolord/alpha-nvim',
+    config = function ()
+      require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    end,
   }
-  -- {
-  --   "yetone/avante.nvim",
-  --   event = "VeryLazy",
-  --   lazy = false,
-  --   version = false, -- set this if you want to always pull the latest change
-  --   opts = {
-  --     -- add any opts here
-  --   },
-  --   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-  --   build = "make",
-  --   -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
-  --   dependencies = {
-  --     "nvim-treesitter/nvim-treesitter",
-  --     "stevearc/dressing.nvim",
-  --     "nvim-lua/plenary.nvim",
-  --     "MunifTanjim/nui.nvim",
-  --     --- The below dependencies are optional,
-  --     "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-  --     "zbirenbaum/copilot.lua", -- for providers='copilot'
-  --     {
-  --       -- support for image pasting
-  --       "HakonHarnes/img-clip.nvim",
-  --       event = "VeryLazy",
-  --       opts = {
-  --         -- recommended settings
-  --         default = {
-  --           embed_image_as_base64 = false,
-  --           prompt_for_file_name = false,
-  --           drag_and_drop = {
-  --             insert_mode = true,
-  --           },
-  --           -- required for Windows users
-  --           use_absolute_path = true,
-  --         },
-  --       },
-  --     },
-  --     {
-  --       -- Make sure to set this up properly if you have lazy=true
-  --       'MeanderingProgrammer/render-markdown.nvim',
-  --       opts = {
-  --         file_types = { "markdown", "Avante" },
-  --       },
-  --       ft = { "markdown", "Avante" },
-  --     },
-  --   },
-  -- }
 }, lazy_config)
 
 -- Load theme and statusline
@@ -214,64 +189,10 @@ require('configs.lualine');
 require('configs.pomo');
 require('configs.pets');
 require('configs.avante')
-
--- Configuration for cmp-ai with Ollama
--- local cmp_ai = require('cmp_ai.config')
---
--- cmp_ai:setup({
---   max_lines = 100,
---   provider = 'Ollama', -- Set Ollama as the provider for completions
---   provider_options = {
---     model = 'llabma', -- Set the model being used
---     prompt = function(lines_before, lines_after)
---       return lines_before
---     end,
---     suffix = function(lines_after)
---       return lines_after
---     end,
---   },
---   notify = true, -- Notify when suggestions are available
---   notify_callback = function(msg)
---     vim.notify(msg) -- Use Neovim's notify system
---   end,
---   run_on_every_keystroke = true, -- Trigger completions on every keystroke
--- })
-
--- Setting up nvim-cmp with cmp-ai as a source
--- Import nvim-cmp
--- local cmp = require'cmp'
---
--- -- Set up nvim-cmp
--- cmp.setup({
---   -- Define the completion sources
---   sources = {
---     { name = 'nvim_lsp' },    -- LSP source
---     { name = 'buffer' },      -- Buffer source
---     { name = 'path' },        -- Path source
---     -- { name = 'cmp_ai'}
---   },
---
---   -- Key mappings (you can customize this part based on your preference)
---   mapping = {
---     ['<C-n>'] = cmp.mapping.select_next_item(),
---     ['<C-p>'] = cmp.mapping.select_prev_item(),
---     ['<C-y>'] = cmp.mapping.confirm({ select = true }),  -- Confirm completion
---     ['<C-Space>'] = cmp.mapping.complete(),             -- Trigger completion manually
---   },
---
---   -- Additional settings for behavior (optional)
---   completion = {
---     completeopt = 'menu,menuone,noinsert'
---   },
---
---   -- Set up snippet support (if you're using LuaSnip or another snippet plugin)
---   snippet = {
---     expand = function(args)
---       vim.fn["vsnip#anonymous"](args.body)  -- For `vsnip` users
---       -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users
---     end,
---   },
--- })
+require('configs.noice');
+require('configs.harpoon');
+require('configs.rest');
+require('configs.zen');
 
 -- Enable relative number lines
 vim.wo.relativenumber = true

@@ -1,6 +1,7 @@
 if vim.g.neovide then
   -- Neovide configuration
   vim.g.neovide_transparency = 0.9  -- Set transparency level (0-1)
+  --
   -- vim.g.transparency = 0.8
   vim.g.neovide_text_gamma = 0.0  -- Adjust text gamma
   vim.g.neovide_text_contrast = 1.0  -- Adjust text contrast
@@ -8,11 +9,6 @@ if vim.g.neovide then
 
   -- Enable true color
   vim.opt.termguicolors = true
-
-  -- Set colorscheme (Gruvbox in this case)
-  -- vim.cmd("colorscheme gruvbox")
-  -- vim.cmd("colorscheme kanagawa")
-  -- vim.cmd("colorscheme everforest")
 
   -- Neovide cursor effects
   vim.g.neovide_cursor_vfx_mode = "railgun"  -- Cursor effect
@@ -28,6 +24,16 @@ if vim.g.neovide then
   vim.g.neovide_floating_blur = 90
   vim.g.neovide_window_floating_blur = 0
   vim.g.neovide_floating_opacity = 0
+  vim.api.nvim_set_keymap("n", "<F11>", ":lua ToggleFullScreen()<CR>", { noremap = true, silent = true })
+
+  function ToggleFullScreen()
+    vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen
+    if vim.g.neovide_fullscreen then
+      vim.g.neovide_transparency = 0.8 -- Adjust transparency for full-screen
+    else
+      vim.g.neovide_transparency = 0.8 -- Reapply normal transparency
+    end
+  end
   --
   -- vim.g.neovide_window_blurred = true
   -- Transparency for floating windows

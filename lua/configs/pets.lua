@@ -11,7 +11,7 @@ if vim.fn.getenv("TERM") == "xterm-kitty" then
       width = "100%", -- width of the popup
       -- winblend = 100, -- winblend value for transparency
       hl = { Normal = "Normal" }, -- highlight group for popup
-      avoid_statusline = false, -- avoid covering the statusline
+      avoid_statusline = true, -- avoid covering the statusline
       -- border = "none", -- remove the box or border around the pet popup
     },
     -- require('hologram').setup{
