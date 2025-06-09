@@ -41,7 +41,6 @@ return {
       ensure_installed = {
         "typescript-language-server", "lua-language-server", "stylua",
         "html-lsp", "css-lsp" , "prettier",
-        "rust-analyzer",
       },
     },
   },
