@@ -49,7 +49,7 @@ return {
     run = ':TSUpdate',
   	opts = {
   		ensure_installed = {
-  			"vim", "lua", "vimdoc",
+  			"vim", "lua", "vimdoc", "typescript",
        "html", "css", "markdown", "markdown_inline", "bash", "javascript", "python", "cpp",
   		},
       highlight = {

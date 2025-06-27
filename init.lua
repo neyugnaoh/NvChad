@@ -2,9 +2,7 @@
 vim.g.mapleader = " "
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/nvchad/base46/"
 
--- Initialize vim-plug (legacy plugin manager, likely not needed if using lazy.nvim)
-
--- Bootstrap lazy.nvim and load plugins
+-- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   local repo = "https://github.com/folke/lazy.nvim.git"
@@ -157,15 +155,15 @@ require("lazy").setup({
     end,
   },
   { "typicode/bg.nvim", lazy = false },
-{
-  "sainnhe/gruvbox-material",
-  priority = 1000, -- Ensure it loads before anything else
-  config = function()
-    vim.g.gruvbox_material_background = "hard" -- Options: 'soft', 'medium', 'hard'
-    vim.g.gruvbox_material_enable_italic = 1
-    vim.cmd("colorscheme gruvbox-material")
-  end
-},
+-- {
+--   "sainnhe/gruvbox-material",
+--   priority = 1000, -- Ensure it loads before anything else
+--   config = function()
+--     vim.g.gruvbox_material_background = "hard" -- Options: 'soft', 'medium', 'hard'
+--     vim.g.gruvbox_material_enable_italic = 1
+--     vim.cmd("colorscheme gruvbox-material")
+--   end
+-- },
 {
   "folke/snacks.nvim",
   priority = 1000,
@@ -181,7 +179,7 @@ require("lazy").setup({
         sections = {
           {
             section = "terminal",
-            cmd = "chafa ~/.config/nvim/cat.jpg --format symbols --symbols block --size 60x60",
+            cmd = "chafa ~/.config/nvim/assets/cat.jpg --format symbols --symbols block --size 60x60",
             height = 30,
             -- padding = 1,
           },
@@ -293,7 +291,6 @@ require('configs.noice');
 require('configs.harpoon');
 require('configs.rest');
 require('configs.zen');
-require('configs.snacks');
 
 -- Enable relative number lines
 vim.wo.relativenumber = true
