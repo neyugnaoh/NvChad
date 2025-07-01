@@ -8,10 +8,10 @@ if vim.fn.getenv("TERM") == "xterm-kitty" then
     random = true, -- use a random pet for PetNew command
     death_animation = true, -- animate the pet's death
     popup = {
-      width = "100%", -- width of the popup
-      -- winblend = 100, -- winblend value for transparency
+      width = "30%", -- width of the popup
+      winblend = 100, -- winblend value for transparency
       hl = { Normal = "Normal" }, -- highlight group for popup
-      avoid_statusline = true, -- avoid covering the statusline
+      avoid_statusline = false, -- avoid covering the statusline
       -- border = "none", -- remove the box or border around the pet popup
     },
     -- require('hologram').setup{
