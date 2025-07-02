@@ -165,7 +165,7 @@ require("lazy").setup({
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
-    -- config = function() require("copilot").setup({}) end,
+    config = function() require("copilot").setup({}) end,
   },
 
   -- 📌 Bookmarking & Navigation
@@ -195,7 +195,7 @@ require("configs.noice")
 require("configs.harpoon")
 require("configs.rest")
 require("configs.zen")
--- require("configs.avante")
+require("configs.copilot")
 
 -- ──────────────🎹 Load Key Mappings ──────────────
 vim.schedule(function()
