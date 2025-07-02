@@ -136,10 +136,10 @@ require("lazy").setup({
     "peter-nv/pets.nvim",
     dependencies = { "MunifTanjim/nui.nvim", "edluffy/hologram.nvim" },
   },
-  {
-    "rest-nvim/rest.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-  },
+  -- {
+  --   "rest-nvim/rest.nvim",
+  --   dependencies = { "nvim-lua/plenary.nvim" },
+  -- },
   {
     "folke/noice.nvim",
     event = "VeryLazy",
