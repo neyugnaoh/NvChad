@@ -14,7 +14,7 @@ M.ui = {
 -- M.plugins = "custom.plugins"
 
 M.base46 = {
-  theme = "mountain",
+  theme = "gruvchad",
   transparency = false 
 
 

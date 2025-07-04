@@ -30,6 +30,24 @@ require("lazy").setup({
 
   -- 📦 Plugin Imports
   { import = "plugins" },
+{
+    "williamboman/mason.nvim",
+    build = ":MasonUpdate",
+    config = function()
+      require("mason").setup()
+    end,
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    config = function()
+      require("mason-lspconfig").setup({
+        ensure_installed = {
+          "tsserver", "pyright", "html", "cssls", "lua_ls"
+        },
+        automatic_installation = true,
+      })
+    end,
+  },
 
   -- 🧩 UI Plugins
   { "lukas-reineke/indent-blankline.nvim" },
